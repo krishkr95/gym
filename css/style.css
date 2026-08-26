@@ -379,7 +379,7 @@ textarea {
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
-  right: 90px;
+  left: 24px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -1433,6 +1433,21 @@ textarea {
 /* ---- Testimonials ---- */
 .testimonials {
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: 12%;
+  left: -220px;
+  border: 1px solid rgba(230, 57, 70, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px rgba(230, 57, 70, 0.025), 0 0 0 60px rgba(230, 57, 70, 0.018);
+  pointer-events: none;
 }
 
 .testimonial-carousel {
@@ -1440,6 +1455,7 @@ textarea {
   overflow: hidden;
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 58px;
 }
 
 .testimonial-track {
@@ -1449,42 +1465,50 @@ textarea {
 
 .testimonial-card {
   min-width: 100%;
-  padding: 0 12px;
-}
-
-.testimonial-inner {
-  background: var(--bg-card);
-  padding: 42px 48px;
+  padding: 44px 64px 46px;
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.98), rgba(17, 17, 17, 0.98));
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
 }
 
-.testimonial-inner::before {
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--accent-gradient);
+}
+
+.testimonial-card::before {
   content: '"';
   position: absolute;
-  top: 10px;
-  right: 24px;
-  font-size: 80px;
+  top: 16px;
+  right: 34px;
+  font-size: 112px;
   font-weight: 900;
   color: rgba(230, 57, 70, 0.08);
   line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
   pointer-events: none;
 }
 
 .testimonial-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-avatar {
   width: 56px;
   height: 56px;
+  flex: 0 0 56px;
   border-radius: 50%;
   background: var(--accent-gradient);
   display: flex;
@@ -1493,6 +1517,7 @@ textarea {
   font-size: 22px;
   font-weight: 700;
   color: #fff;
+  box-shadow: 0 0 0 5px rgba(230, 57, 70, 0.12);
 }
 
 .testimonial-name {
@@ -1510,15 +1535,19 @@ textarea {
   font-size: 18px;
   margin-bottom: 16px;
   letter-spacing: 4px;
+  display: flex;
+  gap: 3px;
 }
 
 .testimonial-text {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto;
+  line-height: 1.85;
+  max-width: 680px;
+  margin: 0;
   font-style: italic;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-controls {
@@ -1530,6 +1559,8 @@ textarea {
 }
 
 .testimonial-btn {
+  position: absolute;
+  top: calc(50% - 29px);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -1540,6 +1571,15 @@ textarea {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  z-index: 2;
+}
+
+.testimonial-prev {
+  left: 0;
+}
+
+.testimonial-next {
+  right: 0;
 }
 
 .testimonial-btn:hover {
@@ -1550,6 +1590,11 @@ textarea {
 .testimonial-dots {
   display: flex;
   gap: 8px;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  justify-content: center;
 }
 
 .testimonial-dot {
@@ -2476,11 +2521,7 @@ textarea {
   }
 
   .testimonial-card {
-    padding: 0 2px;
-  }
-
-  .testimonial-inner {
-    padding: 28px 18px;
+    padding: 28px 18px 36px;
   }
 
   .testimonial-header {
