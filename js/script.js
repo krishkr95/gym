@@ -3,7 +3,7 @@
    ============================================================ */
 
 const CONFIG = {
-    whatsappNumber: '919999999999',
+    whatsappNumber: '919162313092',
     whatsappBase: 'https://wa.me/',
     countdownTarget: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     animationDuration: 800,

@@ -1,6 +1,6 @@
-# IronForge - Premium Gym Website
+# Alpha Fitness Gym - Premium Gym Website
 
-A high-converting, premium, modern and fully responsive gym/fitness website built with pure HTML5, CSS3, and Vanilla JavaScript.
+A high-converting, premium, modern, and fully responsive gym website for **Alpha Fitness Gym, Sahibganj**, built with pure HTML5, CSS3, and Vanilla JavaScript. Tagline: **Train Hard. Be Alpha.**
 
 ## Features
 

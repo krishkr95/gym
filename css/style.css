@@ -428,12 +428,46 @@ textarea {
 }
 
 .nav-logo {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+  transition: var(--transition);
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
 }
 
 .logo-icon {
